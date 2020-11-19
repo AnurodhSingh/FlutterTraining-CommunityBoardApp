@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "5549273695",
+    "firebase_url": "https://fluttercommunityboardapp.firebaseio.com",
+    "project_id": "fluttercommunityboardapp",
+    "storage_bucket": "fluttercommunityboardapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:5549273695:android:b6e317c49c3b0495b9a1ea",
+        "android_client_info": {
+          "package_name": "com.community_board_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "5549273695-90vaocgt5udpju0hcpqcopm42osahdap.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvYrkQNycbFNOHt0HklFyByrkDp0ngcd8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "5549273695-90vaocgt5udpju0hcpqcopm42osahdap.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "5549273695-ii2obvd3j2875ajpik47rofj9nt62n4c.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.communityBoardApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
