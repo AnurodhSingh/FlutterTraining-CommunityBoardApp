@@ -15,7 +15,10 @@ class BoardScreen extends StatefulWidget {
 
 /// Board screen widget state
 class _BoardScreenWidgetState extends State<BoardScreen> {
-  var firestoreDb = Firestore.instance.collection("board").orderBy('timestamp', descending: false).snapshots();
+  var firestoreDb = Firestore.instance
+      .collection("board")
+      .orderBy('timestamp', descending: false)
+      .snapshots();
   TextEditingController nameInputController;
   TextEditingController titleInputController;
   TextEditingController descriptionInputController;
@@ -38,10 +41,9 @@ class _BoardScreenWidgetState extends State<BoardScreen> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String guid = prefs.getString(GUID);
 
-    // If guid is not present in the shared preference then 
+    // If guid is not present in the shared preference then
     // create a new one and store it.
-    if(guid == null)
-    {
+    if (guid == null) {
       var uuid = Uuid();
       guid = uuid.v4();
       await prefs.setString(GUID, guid);
@@ -58,13 +60,15 @@ class _BoardScreenWidgetState extends State<BoardScreen> {
       body: StreamBuilder(
           stream: firestoreDb,
           builder: (context, snapshot) {
-            if (!snapshot.hasData) return CircularProgressIndicator();
+            if (!snapshot.hasData)
+              return Container(
+                child: Center(child: CircularProgressIndicator()),
+              );
             return ListView.builder(
                 itemCount: snapshot.data.documents.length,
-                itemBuilder: (context, int index ) {
-                  return(
-                    CustomCard(snapshot: snapshot.data, index: index, userID: userID)
-                  );
+                itemBuilder: (context, int index) {
+                  return (CustomCard(
+                      snapshot: snapshot.data, index: index, userID: userID));
                 });
           }),
       floatingActionButton: FloatingActionButton(
@@ -145,7 +149,7 @@ class _BoardScreenWidgetState extends State<BoardScreen> {
       print(response.documentID);
       clearInputFields();
       Navigator.pop(context);
-    }).catchError((error){
+    }).catchError((error) {
       print(error);
     });
   }
