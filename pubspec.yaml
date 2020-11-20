@@ -21,14 +21,14 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies: 
+  flutter:
+    sdk: flutter
   firebase_core: ^0.4.0+9
   cloud_firestore: ^0.12.9+5
   font_awesome_flutter: ^8.10.0
   shared_preferences: ^0.5.8
   uuid: 2.2.0
   intl: ^0.16.0
-  flutter:
-    sdk: flutter
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -38,6 +38,12 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.8.1
+
+flutter_icons:
+  android: "ic_launcher"
+  ios: true
+  image_path: "assets/app_icon/app_icon.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
